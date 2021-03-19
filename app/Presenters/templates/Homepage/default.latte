@@ -55,13 +55,13 @@
 		
             {foreach $form as $frm}
 			
-			<tr  {if $frm->splněno == "splněno" } class="active" {/if}>
+			<tr  {if $frm->splněno == 1 } class="active" {/if}>
 	<td>{$frm->popis}</td>
 	<td>{$frm->konec}</td>
 	<td><a n:href="edit $frm->id"><i class="fas fa-edit"></i></a></td>
 	<td><a n:href="delete $frm->id"><i style="color:red;"class="fas fa-trash-alt"></i></a></td>
 	  <form  method="post" name="frmcheck">
-                        <td><input type="checkbox" name="splněno" class="box checkbox-done checkbox-undone" id="box-1" data-target="{$frm->id}" onclick="chkboxcolorrow(this);" value="splněno" value2="nesplněno"  {if $frm->splněno == "splněno"}: checked reloads {/if}></td>
+                        <td><input type="checkbox" name="splněno" class="box checkbox-done checkbox-undone" id="box-1" data-target="{$frm->id}" onclick="chkboxcolorrow(this);" value="1" value2= ""  {if $frm->splněno == 1}: checked reloads {/if}></td>
 
 
                     </form>

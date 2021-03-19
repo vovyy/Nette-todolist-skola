@@ -3,10 +3,10 @@
 {var $value = htmlspecialchars(strip_tags(filter_input(INPUT_POST, "value"))) }
 {var $id = htmlspecialchars(strip_tags(filter_input(INPUT_POST, "id")))}
 {if $value != "" && $id != ""}
-    {var $servername = "sql3.endora.cz:3308"}
-    {var $username = "vojtavlachynsky"}
-    {var $password = "Vojta20027"}
-    {var $dbname = "formvovy"}
+    {var $servername = "127.0.0.1"}
+    {var $username = "root"}
+    {var $password = ""}
+    {var $dbname = "to_do_list"}
     {var $conn = new mysqli($servername, $username, $password, $dbname)}
     {if $conn->connect_error} 
         die("Connection failed: " . $conn->connect_error);

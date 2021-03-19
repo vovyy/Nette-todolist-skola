@@ -4,7 +4,7 @@
 namespace App\Presenters;
 
 use Nette;
-//use App\Model\Main_model;
+use App\Model\Main_model;
 use CustomRoleManager\CustomRoleManager;
 use Nette\Database\Context;
 use Nette\Application\UI\Form;
@@ -16,11 +16,11 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter
 {
     private $main_model;
 
-    // //public function __construct(Main_model $main_model)
-    // {
-    //     $this->main_model = $main_model;
-    // }
-    // public $database;
+    public function __construct(Main_model $main_model)
+    {
+        $this->main_model = $main_model;
+    }
+    public $database;
 
     public function injectContext(Context $database)
     {
@@ -40,7 +40,6 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter
 
 
         $form->addText('konec', 'Konec:')
-            ->setValue($today = date("m.d.y"))
             ->setHtmlAttribute('form-label, Konec:')
             ->setHtmlAttribute('type', 'text')
             ->setHtmlAttribute('class', 'daterange')

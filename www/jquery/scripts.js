@@ -4,7 +4,7 @@ jQuery(document).ready(function() {
 		if ($(this).is(":checked")) {
 		 value = $(this).val();
 		} else{
-			value = "false";
+			value = "0";
 		}
 		var id = parseInt($(this).attr("data-target"));
 		$.ajax({
